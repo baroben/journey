@@ -7,7 +7,8 @@ PortefolioListView::PortefolioListView(QWidget *parent)
     portefolioList_ = new QListView;
     portefolioList_->setStyleSheet("* {border:0;background-color:#242526;border-radius:5px}");
 
-    addPortefolioButton = new QPushButton("Add");
+    addPortefolioButton = new QPushButton("Add a portefolio");
+    addPortefolioButton->setGeometry(0,0,600,30);
     connect(addPortefolioButton, SIGNAL(clicked()), this, SIGNAL(addPortefolio()));
 
     QGridLayout *mainLayout = new QGridLayout;

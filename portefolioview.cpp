@@ -8,10 +8,10 @@ PortefolioView::PortefolioView()
     tradeTableView_->setStyleSheet("* {border:0;background-color:#242526;border-radius:5px}");
     connect(tradeTableView_,SIGNAL(clicked(QModelIndex)), this, SIGNAL(tradeSelected()));
 
-    deleteButton = new QPushButton(tr("Delete"));
-    addTradeButton = new QPushButton(tr("Add Trade"));
-    editButton = new QPushButton(tr("Edit"));
-    backButton = new QPushButton(tr("Back"));
+    deleteButton = new QPushButton(tr("Delete the Portefolio"));
+    addTradeButton = new QPushButton(tr("Add a Trade"));
+    editButton = new QPushButton(tr("Edit the Portefolio"));
+    backButton = new QPushButton(tr("All Portefolios"));
 
     connect(deleteButton,SIGNAL(clicked()), this, SIGNAL(portefolioDeleted()));
     connect(addTradeButton,SIGNAL(clicked()), this, SIGNAL(addTrade()));
@@ -48,7 +48,7 @@ PortefolioView::PortefolioView()
     buttonLayout->addWidget(backButton,0,0,Qt::AlignRight | Qt::AlignTop);
     buttonLayout->addWidget(editButton,1,0,Qt::AlignRight | Qt::AlignTop);
     buttonLayout->addWidget(deleteButton,2,0,Qt::AlignRight | Qt::AlignTop);
-    buttonLayout->addWidget(addTradeButton,2,0,Qt::AlignRight | Qt::AlignTop);
+    buttonLayout->addWidget(addTradeButton,3,0,Qt::AlignRight | Qt::AlignTop);
 
     upperLayout->addWidget(statPane,0,1);
     upperLayout->addLayout(buttonLayout,0,3);

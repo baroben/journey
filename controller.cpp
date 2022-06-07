@@ -241,6 +241,7 @@ void Controller::editPortefolio(PortefolioModel *portefolioModel, const int port
             index = portefolioModel->index(portefolioRow,2);
             portefolioModel->setData(index, dialog.description(),Qt::EditRole);
         }
+        displaySelectedPortefolio();
     }
 }
 

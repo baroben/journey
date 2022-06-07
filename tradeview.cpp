@@ -6,10 +6,10 @@
 
 TradeView::TradeView()
 {
-    backButton = new QPushButton("Back");
+    backButton = new QPushButton("Portefolio");
     backButton->setGeometry(0,0,200,100);
-    editButton = new QPushButton("Edit");
-    deleteButton = new QPushButton("Delete");
+    editButton = new QPushButton("Edit the Trade");
+    deleteButton = new QPushButton("Delete the Trade");
 
     connect(backButton, SIGNAL(clicked()),this,SIGNAL(goBack()));
     connect(editButton, SIGNAL(clicked()),this,SIGNAL(editRequested()));
