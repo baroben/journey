@@ -4,7 +4,7 @@
 
 Trade::Trade() : gain_(0), exit_(0),entry_(0), stoploss_(0),
     date_(QDate(2022,05,1), QTime(12,00,00,00), Qt::UTC),
-    comment_(QString("comment")), image_("C:/Users/benit/Documents/TRADE/DS/ALGO.PNG")
+    comment_(QString("comment")), image_(":/images/trade.PNG")
 {
     image_ = image_.scaled(QSize(1000,1000), Qt::KeepAspectRatio);
 }

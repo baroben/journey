@@ -15,7 +15,7 @@ int PortefolioModel::rowCount(const QModelIndex &parent) const
 
 int PortefolioModel::columnCount(const QModelIndex &parent) const
 {
-    return 2;
+    return 3;
 }
 
 QVariant PortefolioModel::data(const QModelIndex &index, int role) const
@@ -23,19 +23,20 @@ QVariant PortefolioModel::data(const QModelIndex &index, int role) const
     int row = index.row();
     int col = index.column();
 
+
     if(role == Qt::DisplayRole)
     {
-            switch(col){
-            case 0:
-                return portefolioList.value(row)->name();
-                break;
-            case 1:
-                return QVariant::fromValue(portefolioList.value(row)->tradeModel());
-                break;
-            case 2:
-                return portefolioList.value(row)->description();
-                break;
-            }
+        switch(col){
+        case 0:
+            return portefolioList.value(row)->name();
+            break;
+        case 1:
+            return QVariant::fromValue(portefolioList.value(row)->tradeModel());
+            break;
+        case 2:
+            return portefolioList.value(row)->description();
+            break;
+        }
     }
     return QVariant();
 }

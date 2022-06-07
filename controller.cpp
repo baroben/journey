@@ -3,7 +3,6 @@
 #include <QPixmap>
 #include "editportefoliodialog.h"
 #include "edittradedialog.h"
-#include "portefoliotab.h"
 #include "trade.h"
 #include "portefolio.h"
 
@@ -279,7 +278,7 @@ void Controller::displaySelectedPortefolio()
         index=portefolioModel->index(row,0);
         portefolioView->name(portefolioModel->data(index).toString());
 
-        index=portefolioModel->index(row,0);
+        index=portefolioModel->index(row,2);
         portefolioView->description(portefolioModel->data(index).toString());
 
         goToPortefolioView();

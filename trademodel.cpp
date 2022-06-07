@@ -9,9 +9,9 @@
 
 TradeModel::TradeModel(QObject *parent) : QAbstractTableModel(parent)
 {
-    dataStorage.push_back(new Trade(100,110,95,2000,QDateTime(QDate(2022,5,1), QTime(12,00,00,00), Qt::UTC),"This is a comment", QPixmap("C:/Users/benit/Documents/TRADE/DS/ALGO.PNG")));
-    dataStorage.push_back(new Trade(2000,1850,1850,-1200,QDateTime(QDate(2022,6,1), QTime(12,20,00,00), Qt::UTC),"This is another comment", QPixmap("C:/Users/benit/Documents/TRADE/DS/ALGO.PNG")));
-    dataStorage.push_back(new Trade(50,80,40,3000,QDateTime(QDate(2022,8,1), QTime(13,40,00,00), Qt::UTC),QString("This is a comment too"), QPixmap("C:/Users/benit/Documents/TRADE/DS/ALGO.PNG")));
+    dataStorage.push_back(new Trade(100,110,95,2000,QDateTime(QDate(2022,5,1), QTime(12,00,00,00), Qt::UTC),"This is a comment", QPixmap(":/images/trade.PNG")));
+    dataStorage.push_back(new Trade(2000,1850,1850,-1200,QDateTime(QDate(2022,6,1), QTime(12,20,00,00), Qt::UTC),"This is another comment", QPixmap(":/images/trade.PNG")));
+    dataStorage.push_back(new Trade(50,80,40,3000,QDateTime(QDate(2022,8,1), QTime(13,40,00,00), Qt::UTC),QString("This is a comment too"), QPixmap(":/images/trade.PNG")));
 }
 
 int TradeModel::rowCount(const QModelIndex &) const {
