@@ -23,6 +23,7 @@ void Trade::gain(float g){gain_ = g;}
 void Trade::date(QDateTime d){date_ = d;}
 void Trade::comment(QString comment){comment_ = comment;}
 void Trade::image(QPixmap image){image_ = image;}
+void Trade::asset(QString asset){asset_ = asset;}
 
 float Trade::entry() const{return entry_;}
 float Trade::exit() const{return exit_;}
@@ -31,4 +32,6 @@ float Trade::gain() const{return gain_;}
 QDateTime Trade::date() const{return date_;}
 QString Trade::comment() const{return comment_;}
 QPixmap Trade::image() const {return image_;}
+QString Trade::asset() const {return asset_;}
+
 

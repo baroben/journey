@@ -6,6 +6,8 @@
 #include <QList>
 #include "trade.h"
 
+extern const numbercolumn;
+
 class TradeModel : public QAbstractTableModel
 {
     Q_OBJECT
@@ -19,6 +21,9 @@ class TradeModel : public QAbstractTableModel
         bool removeRows(int position, int rows, const QModelIndex &parent) override;
         bool insertRows(int position, int rows, const QModelIndex &parent) override;
         bool setData(const QModelIndex &index, const QVariant &value, int role) override;
+
+        float getAverageGain();
+        float getNumberTrades();
 
     private :
         QList<Trade*> dataStorage;

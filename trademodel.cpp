@@ -6,6 +6,7 @@
 #include "trade.h"
 #include <QDebug>
 
+const int NUMBER_COLUMN_TRADE_MODEL = 8;
 
 TradeModel::TradeModel(QObject *parent) : QAbstractTableModel(parent)
 {
@@ -19,7 +20,7 @@ int TradeModel::rowCount(const QModelIndex &) const {
 }
 
 int TradeModel::columnCount(const QModelIndex &) const {
-    return 7;
+    return NUMBER_COLUMN_TRADE_MODEL;
 }
 
 QVariant TradeModel::data(const QModelIndex &index, int role) const{
@@ -29,26 +30,29 @@ QVariant TradeModel::data(const QModelIndex &index, int role) const{
     if(role == Qt::DisplayRole)
     {
             switch(col){
-            case 0:
+            case DATE_INDEX:
                 return dataStorage.value(row)->date();
                 break;
-            case 1:
+            case ENTRY_INDEX:
                 return dataStorage.value(row)->entry();
                 break;
-            case 2:
+            case EXIT_INDEX:
                 return dataStorage.value(row)->exit();
                 break;
-            case 3:
+            case STOPLOSS_INDEX:
                 return dataStorage.value(row)->stoploss();
                 break;
-            case 4:
+            case GAIN_INDEX:
                 return dataStorage.value(row)->gain();
                 break;
-            case 5:
+            case COMMENT_INDEX:
                 return dataStorage.value(row)->comment();
                 break;
-            case 6:
+            case IMAGE_INDEX:
                 return dataStorage.value(row)->image();
+                break;
+            case ASSET_INDEX:
+                return dataStorage.value(row)->asset();
                 break;
             }
     }
@@ -59,19 +63,22 @@ QVariant TradeModel::headerData(int section, Qt::Orientation orientation, int ro
 {
     if(role == Qt::DisplayRole && orientation == Qt::Horizontal){
         switch(section){
-        case 0:
+        case DATE_INDEX:
             return QString("Date");
             break;
-        case 1:
+        case ENTRY_INDEX:
             return QString("Entry");
             break;
-        case 2:
+        case EXIT_INDEX:
             return QString("Exit");
             break;
-        case 3:
+        case STOPLOSS_INDEX:
             return QString("Stoploss");
             break;
-        case 4:
+        case GAIN_INDEX:
+            return QString("Gain");
+            break;
+        case ASSET_INDEX:
             return QString("Gain");
             break;
         }
@@ -116,26 +123,29 @@ bool TradeModel::setData(const QModelIndex &index, const QVariant &value, int ro
         Trade *t = dataStorage.value(row);
         switch(col)
         {
-        case 0:
+        case DATE_INDEX:
             t->date(value.toDateTime());
             break;
-        case 1:
+        case ENTRY_INDEX:
             t->entry(value.toFloat());
             break;
-        case 2:
+        case EXIT_INDEX:
             t->exit(value.toFloat());
             break;
-        case 3:
+        case STOPLOSS_INDEX:
             t->stoploss(value.toFloat());
             break;
-        case 4:
+        case GAIN_INDEX:
             t->gain(value.toFloat());
             break;
-        case 5:
+        case COMMENT_INDEX:
             t->comment(value.toString());
             break;
-        case 6:
+        case IMAGE_INDEX:
             t->image(value.value<QPixmap>());
+            break;
+        case ASSET_INDEX:
+            t->asset(value.toString());
             break;
         }
     }
